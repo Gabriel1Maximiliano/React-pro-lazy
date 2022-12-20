@@ -10,28 +10,28 @@ export const useShoppingCart = () => {
   
       setShoppinCart(oldShoppingCart =>{
   
-        const productInCart: ProductInCart = oldShoppingCart[product.id] || {...product, count:0};
-        if( Math.max( productInCart.count +count,0 ) > 0 ){
-          productInCart.count+=count;
-          return{
-            ...oldShoppingCart,
-            [product.id]:productInCart
-          }
-        }
-        // borrar el producto
+        // const productInCart: ProductInCart = oldShoppingCart[product.id] || {...product, count:0};
+        // if( Math.max( productInCart.count +count,0 ) > 0 ){
+        //   productInCart.count+=count;
+        //   return{
+        //     ...oldShoppingCart,
+        //     [product.id]:productInCart
+        //   }
+        // }
+        // // borrar el producto
+        // const {[product.id]: toDelete,...rest} = oldShoppingCart;
+        // return {...rest};
+        if(count === 0){
         const {[product.id]: toDelete,...rest} = oldShoppingCart;
-        return {...rest};
-      //  if(count === 0){
-      //  const {[product.id]: toDelete,...rest} = oldShoppingCart;
-      //  console.log(toDelete)
-      //  return rest
-      //  }
+        console.log(toDelete)
+        return rest
+        }
        
-      //  setcart([...cart ,shoppinCart ])
-      //   return{
-      //     ...oldShoppingCart,
-      //   [ product.id ]: {...product,count}
-      //   }
+     
+         return{
+          ...oldShoppingCart,
+         [ product.id ]: {...product,count}
+         }
       })
     }
   
