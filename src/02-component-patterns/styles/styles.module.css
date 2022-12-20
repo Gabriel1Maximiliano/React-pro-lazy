@@ -65,3 +65,8 @@
     flex-direction: row;
     flex-wrap: wrap;
 }
+.disabled{
+    border-color: rgb(0, 195, 58) !important;
+    border-left: solid 1px white !important;
+    color:rgb(0, 195, 58) !important
+}
